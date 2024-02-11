@@ -1,0 +1,252 @@
+body {
+    font-family: Arial;
+    margin: 0;
+}
+
+.todo-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    height: 15vh;
+    background-color: purple;
+}
+
+.todo-header h1 {
+    font-size: 2.2em;
+}
+
+.todo-description {
+    text-align: center;
+    font-size: 0.8em;
+    margin: 1rem;
+}
+
+.app {
+    margin: 0 auto;
+    width: 33%;
+}
+
+
+
+
+
+.todo-wrapper {
+    max-width: 100%;
+}
+
+.category-status {
+    border-bottom: 1px solid gray;
+    text-align: left;
+    padding: 0.1em;
+    padding-left: 0.5rem;
+    margin: 0 0.3rem;
+    font-size: 1.1em;
+
+}
+
+.category-status::first-letter {
+
+    text-transform: capitalize;
+}
+
+.toggle-todos-wrapper {
+    display: flex;
+    justify-content: right;
+    flex-wrap: wrap;
+    width: 100%;
+    max-width: 100%;
+    margin: 0.1rem 0px;
+}
+
+
+@media only screen and (max-width:480px) {
+    .app {
+
+        width: 80%;
+
+    }
+}
+
+.toggle-todos-button {
+    flex: 1 0 0.1em;
+    align-items: center;
+    background-color: #FFFFFF;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: .25rem;
+    box-shadow: rgba(0, 0, 0, 0.02) 0 1px 3px 0;
+    box-sizing: border-box;
+    color: rgba(0, 0, 0, 0.85);
+    cursor: pointer;
+    display: inline-flex;
+    font-family: system-ui, -apple-system, system-ui, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    justify-content: center;
+    line-height: 1.25;
+    margin: 0.1rem;
+    padding: 0.6rem;
+    position: relative;
+    text-decoration: none;
+    transition: all 250ms;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    vertical-align: baseline;
+    width: auto;
+}
+
+.toggle-todos-button:hover {
+    border-color: rgba(0, 0, 0, 0.15);
+    box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
+    color: rgba(0, 0, 0, 0.65);
+}
+
+.todo-list {
+    width: 100%;
+}
+
+.todo {
+    flex: 1 0 8rem;
+    display: flex;
+    justify-content: space-between;
+    margin: 0.1rem 0.3rem;
+    transition: 5s;
+}
+
+.todo-text {
+    margin: 0;
+    font-size: 1.2em;
+    padding: 0.5rem;
+    width: 90%;
+    cursor: pointer;
+}
+
+.todo-item-padding {
+    padding-right: 0.5rem;
+}
+
+.todo-item-completed {
+    text-decoration: line-through;
+    color: purple;
+}
+
+.todo-options {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 0.5em;
+}
+
+.todo-options-item-hidden {
+    visibility: hidden;
+}
+
+.todo-options-item {
+    cursor: pointer;
+    padding: 0.2rem;
+}
+
+.todo-form-wrapper {
+    width: 100%;
+}
+
+.todo-form {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.todo-form input {
+    flex: 1 0 8rem;
+    width: 80%;
+    padding: 0.75rem 1.25rem;
+    margin: 0.5rem 0.313rem 0.5rem 0.313rem;
+    border-radius: 0.313rem;
+    border: 1px solid gray;
+}
+
+.todo-form button {
+    align-items: center;
+    background-color: #FFFFFF;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: .25rem;
+    box-shadow: rgba(0, 0, 0, 0.02) 0 1px 3px 0;
+    box-sizing: border-box;
+    color: rgba(0, 0, 0, 0.85);
+    cursor: pointer;
+    display: inline-flex;
+    font-family: system-ui, -apple-system, system-ui, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    justify-content: center;
+    line-height: 1.25;
+    position: relative;
+    text-decoration: none;
+    transition: all 250ms;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    vertical-align: baseline;
+    width: auto;
+    margin: 0.5rem 0.313rem;
+    padding: 0.75rem 1.25rem;
+}
+
+.todo-form button:hover {
+    border-color: rgba(0, 0, 0, 0.15);
+    box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
+    color: rgba(0, 0, 0, 0.65);
+}
+
+.todo-edit-form {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 100%;
+
+}
+
+.todo-edit-form input {
+    flex: 1 0 8rem;
+    width: 80%;
+    padding: 0.75rem 1.25rem;
+    margin: 0.5rem 0.313rem 0.5rem 0.313rem;
+    border-radius: 0.313rem;
+    border: 1px solid gray;
+}
+
+.todo-edit-form button {
+    align-items: center;
+    background-color: #FFFFFF;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: .25rem;
+    box-shadow: rgba(0, 0, 0, 0.02) 0 1px 3px 0;
+    box-sizing: border-box;
+    color: rgba(0, 0, 0, 0.85);
+    cursor: pointer;
+    display: inline-flex;
+    font-family: system-ui, -apple-system, system-ui, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    justify-content: center;
+    line-height: 1.25;
+    position: relative;
+    text-decoration: none;
+    transition: all 250ms;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    vertical-align: baseline;
+    width: auto;
+    margin: 0.5rem 0.313rem;
+    padding: 0.75rem 1.25rem;
+}
+
+.todo-edit-form button:hover {
+    border-color: rgba(0, 0, 0, 0.15);
+    box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
+    color: rgba(0, 0, 0, 0.65);
+}
