@@ -3,9 +3,10 @@ import TodoForm from './TodoForm'
 import Todo from './Todo'
 import TodoEditForm from './TodoEditForm'
 import '../styles/style.css'
+import toast, { Toaster } from 'react-hot-toast';
+
 function TodoWrapper() {
   const getSessionStorage = JSON.parse(sessionStorage.getItem('Data')) //get data from session storage
-
   const [todos, setTodos] = useState(getSessionStorage ? getSessionStorage : []);//session storage is available then SS, if not []
   const [activeTodos, setactiveTodos] = useState([])
   const [completedTodos, setcompletedTodos] = useState([])
@@ -13,6 +14,7 @@ function TodoWrapper() {
   const addTodo = (todo) => {
     setTodos([...todos, { id: Math.floor(Math.random() * 10000), task: todo, completed: false, isEditing: false }])
     setCategory('all')
+    toast.success('Todo added!')
   }
 
   useEffect(() => {
@@ -30,32 +32,20 @@ function TodoWrapper() {
     setTodos(todos.map((item) =>
       item.id === id ? { ...item, completed: !item.completed } : item))
 
-    setactiveTodos(activeTodos.map((item) =>
-      item.id === id ? { ...item, completed: !item.completed } : item))
-
-    setcompletedTodos(completedTodos.map((item) =>
-      item.id === id ? { ...item, completed: !item.completed } : item))
-
-
   }
   const removeTodo = (id) => {
     setTodos(todos.filter(item => item.id !== id))
-    setcompletedTodos(completedTodos.filter(item => item.id !== id))
-    setactiveTodos(activeTodos.filter(item => item.id !== id))
+    toast('Todo removed!', {
+      icon: '👏',
+    })
   }
   const toggleEdit = (id) => {
     setTodos(todos.map((item) => {
       return item.id === id ? { ...item, isEditing: !item.isEditing } : item;
     }))
-    setactiveTodos(activeTodos.map((item) => {
-      return item.id === id ? { ...item, isEditing: !item.isEditing } : item;
-    }))
   }
   const editTask = (task, id) => {
     setTodos(todos.map((item) => {
-      return item.id === id ? { ...item, task, isEditing: !item.isEditing } : item
-    }))
-    setactiveTodos(activeTodos.map((item) => {
       return item.id === id ? { ...item, task, isEditing: !item.isEditing } : item
     }))
   }
@@ -68,7 +58,6 @@ function TodoWrapper() {
 
   const renderTodos = () => {
     let filteredTodos = todos;
-
     if (category === "active") filteredTodos = activeTodos;
     else if (category === "completed") filteredTodos = completedTodos;
     const list = filteredTodos?.map((item, index) =>
@@ -84,6 +73,10 @@ function TodoWrapper() {
 
   return (
     <div className='todo-wrapper'>
+     <Toaster
+     position="bottom-center"
+     reverseOrder={false}
+      />
       <TodoForm addTodo={addTodo} />
       <p className='category-status'>{category}</p>
       <div className='todo-list'>

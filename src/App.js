@@ -13,6 +13,9 @@ function App() {
             <p className='todo-description'>Your Todo's for {date}</p>
             <TodoWrapper />
          </div>
+         <div className='todo-footer'>
+         © 2024 React Todo-App
+         </div>
       </>
 
 
