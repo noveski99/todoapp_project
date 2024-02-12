@@ -15,4 +15,4 @@ $ npm install
 $ npm start
 
 🔗 Demo <br>
-[Click me](https://todo-appproject1.netlify.app/) to see and play by yourself a demo of the game.
+[Click me](https://todo-appproject1.netlify.app/) to see and play by yourself a demo of the app.
