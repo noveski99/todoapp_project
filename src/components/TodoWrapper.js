@@ -54,9 +54,10 @@ function TodoWrapper() {
   const [category, setCategory] = useState('all')
   const handeClick = (category) => {
     setCategory(category)
+    if(category === 'active' && activeTodos.length === 0) toast('No active todos'); 
+    if(category === 'completed' && completedTodos.length === 0) toast('No completed todos');
+    if(category === 'all' && todos.length === 0)toast('Todos list is empty, add some!');
   }
-
-
   const renderTodos = () => {
     let filteredTodos = todos;
     if (category === "active") filteredTodos = activeTodos;
