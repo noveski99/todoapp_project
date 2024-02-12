@@ -20,6 +20,12 @@ function TodoWrapper() {
   }, [todos])
 
 
+  useEffect(() => {
+    setactiveTodos(todos.filter((todo) => todo.completed === false))
+    setcompletedTodos(todos.filter((todo) => todo.completed === true))
+  }, [todos])
+
+
   const toggleCompleted = (id) => {
     setTodos(todos.map((item) =>
       item.id === id ? { ...item, completed: !item.completed } : item))
@@ -29,6 +35,8 @@ function TodoWrapper() {
 
     setcompletedTodos(completedTodos.map((item) =>
       item.id === id ? { ...item, completed: !item.completed } : item))
+ 
+     
   }
   const removeTodo = (id) => {
     setTodos(todos.filter(item => item.id !== id))
@@ -55,9 +63,6 @@ function TodoWrapper() {
   const [category, setCategory] = useState('all')
   const handeClick = (category) => {
     setCategory(category)
-    setactiveTodos(todos.filter((todo) => todo.completed === false))
-    setcompletedTodos(todos.filter((todo) => todo.completed === true))
-    console.log(activeTodos)
   }
 
 
