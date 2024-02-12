@@ -12,6 +12,7 @@ function TodoEditForm(props) {
 
         <form className='todo-edit-form' onSubmit={handleSubmit}>
             <input
+                maxLength={20}
                 required
                 type='text'
                 placeholder='Edit Todo'

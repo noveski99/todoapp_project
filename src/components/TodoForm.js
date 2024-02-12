@@ -12,6 +12,7 @@ function TodoForm(props) {
         <div className='todo-form-wrapper'>
             <form className='todo-form' onSubmit={handleSubmit}>
                 <input
+                    maxLength={20}
                     required
                     type='text'
                     placeholder='Add new'

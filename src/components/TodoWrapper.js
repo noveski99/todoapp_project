@@ -35,8 +35,8 @@ function TodoWrapper() {
 
     setcompletedTodos(completedTodos.map((item) =>
       item.id === id ? { ...item, completed: !item.completed } : item))
- 
-     
+
+
   }
   const removeTodo = (id) => {
     setTodos(todos.filter(item => item.id !== id))
