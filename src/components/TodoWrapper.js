@@ -55,13 +55,13 @@ function TodoWrapper() {
   const handeClick = (category) => {
     setCategory(category)
     if (category === 'active' && activeTodos.length === 0) toast('No active todos', {
-      position:"top-left" 
+      position:"bottom-center" 
     });
     if (category === 'completed' && completedTodos.length === 0) toast('No completed todos', {
-      position:"top-left" 
+      position:"bottom-center" 
     });
     if (category === 'all' && todos.length === 0) toast('Todos list is empty, add some!', {
-      position:"top-left" 
+      position:"bottom-center" 
     });
   }
   const renderTodos = () => {

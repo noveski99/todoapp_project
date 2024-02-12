@@ -12,7 +12,7 @@ function App() {
         reverseOrder={false}
       />
          <div className='todo-header'>
-            <h1>Todo App <BsListTask /> </h1>
+            <h1><a href="./index.html">Todo App  </a><BsListTask /> </h1>
          </div>
          <div className='app'>
             <p className='todo-description'>Your Todo's for {date}</p>
