@@ -3,7 +3,7 @@ import TodoForm from './TodoForm'
 import Todo from './Todo'
 import TodoEditForm from './TodoEditForm'
 import '../styles/style.css'
-import toast, { Toaster } from 'react-hot-toast';
+import toast from 'react-hot-toast';
 
 function TodoWrapper() {
   const getSessionStorage = JSON.parse(sessionStorage.getItem('Data')) //get data from session storage
@@ -54,9 +54,15 @@ function TodoWrapper() {
   const [category, setCategory] = useState('all')
   const handeClick = (category) => {
     setCategory(category)
-    if(category === 'active' && activeTodos.length === 0) toast('No active todos'); 
-    if(category === 'completed' && completedTodos.length === 0) toast('No completed todos');
-    if(category === 'all' && todos.length === 0)toast('Todos list is empty, add some!');
+    if (category === 'active' && activeTodos.length === 0) toast('No active todos', {
+      position:"top-left" 
+    });
+    if (category === 'completed' && completedTodos.length === 0) toast('No completed todos', {
+      position:"top-left" 
+    });
+    if (category === 'all' && todos.length === 0) toast('Todos list is empty, add some!', {
+      position:"top-left" 
+    });
   }
   const renderTodos = () => {
     let filteredTodos = todos;
@@ -75,10 +81,6 @@ function TodoWrapper() {
 
   return (
     <div className='todo-wrapper'>
-     <Toaster
-     position="bottom-center"
-     reverseOrder={false}
-      />
       <TodoForm addTodo={addTodo} />
       <p className='category-status'>{category}</p>
       <div className='todo-list'>
