@@ -48,6 +48,7 @@ function TodoWrapper() {
     setTodos(todos.map((item) => {
       return item.id === id ? { ...item, task, isEditing: !item.isEditing } : item
     }))
+    toast.success('Todo updated!')
   }
 
   const [category, setCategory] = useState('all')

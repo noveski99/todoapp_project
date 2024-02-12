@@ -109,7 +109,7 @@ body {
     margin: 0.1rem 0.3rem;
     transition: background-color 700ms;
 }
- 
+
 .todo-text {
     margin: 0;
     font-size: 1.2em;
@@ -247,7 +247,7 @@ body {
     color: rgba(0, 0, 0, 0.65);
 }
 
-.todo-footer{
+.todo-footer {
     position: fixed;
     left: 0;
     bottom: 0;
