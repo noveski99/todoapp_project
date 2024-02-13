@@ -20,7 +20,7 @@ function TodoForm(props) {
                     value={value}
                     onChange={(e) => { setValue(e.target.value) }}
                 />
-                <button title='Add todo'>Add</button>
+                <button title='Add todo'>+</button>
             </form>
         </div>
     )

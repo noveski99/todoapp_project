@@ -82,17 +82,18 @@ function TodoWrapper() {
   return (
     <div className='todo-wrapper'>
       <TodoForm addTodo={addTodo} />
+      <div className='toggle-todos-wrapper'>
+        <button title="See all todos" className="toggle-todos-button" onClick={() => handeClick('all')}>All</button>
+        <button title="See active todos" className="toggle-todos-button" onClick={() => handeClick('active')}>Active</button>
+        <button title="See completed todos" className="toggle-todos-button" onClick={() => handeClick('completed')}>Completed</button>
+      </div>
       <p className='category-status'>{category}</p>
       <div className='todo-list'>
         {
           renderTodos()
         }
       </div>
-      <div className='toggle-todos-wrapper'>
-        <button title="See all todos" className="toggle-todos-button" onClick={() => handeClick('all')}>All</button>
-        <button title="See active todos" className="toggle-todos-button" onClick={() => handeClick('active')}>Active</button>
-        <button title="See completed todos" className="toggle-todos-button" onClick={() => handeClick('completed')}>Completed</button>
-      </div>
+     
     </div>
   )
 }
