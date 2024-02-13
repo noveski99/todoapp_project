@@ -94,10 +94,12 @@ body {
 }
 
 .toggle-todos-button:hover {
-    border-bottom: 1px solid gray;
     margin:0;
 }
-
+.toggle-todos-button:focus {
+    border-bottom: 1px solid gray;
+  
+}
 .todo-list {
     width: 100%;
 }
