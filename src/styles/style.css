@@ -10,7 +10,7 @@ body {
     justify-content: center;
     color: white;
     height: 15vh;
-    background-color: #383838;
+    background-color: 		#101010;
 }
 
 .todo-header h1 {
@@ -128,7 +128,7 @@ body {
 
 .todo-item-completed {
     text-decoration: line-through;
-    color: #383838;
+    color: #101010;
 
 }
 
