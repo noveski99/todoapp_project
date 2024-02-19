@@ -262,4 +262,5 @@ body {
     width: 100%;
     color: gray;
     text-align: center;
+    user-select: none;
 }
