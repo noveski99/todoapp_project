@@ -1,5 +1,5 @@
 body {
-    font-family: Arial;
+    font-family: Century Gothic;
     margin: 0;
 }
 
@@ -37,7 +37,7 @@ body {
     max-width: 100%;
 }
 
-.category-status {
+.category-status{
     border-bottom: 1px solid gray;
     text-align: left;
     padding: 0.1em;
@@ -58,6 +58,7 @@ body {
     width: 100%;
     max-width: 100%;
     margin: 0.5rem 0px;
+   
 }
 
 
