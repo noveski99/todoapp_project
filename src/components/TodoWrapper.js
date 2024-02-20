@@ -4,30 +4,24 @@ import Todo from './Todo'
 import TodoEditForm from './TodoEditForm'
 import '../styles/style.css'
 import toast from 'react-hot-toast';
-
 function TodoWrapper() {
   const getSessionStorage = JSON.parse(sessionStorage.getItem('Data')) //get data from session storage
   const [todos, setTodos] = useState(getSessionStorage ? getSessionStorage : []);//session storage is available then SS, if not []
   const [activeTodos, setactiveTodos] = useState([])
   const [completedTodos, setcompletedTodos] = useState([])
-
+  const [category, setCategory] = useState('all')
+  useEffect(() => {
+    sessionStorage.setItem("Data", JSON.stringify(todos));
+  }, [todos])
+  useEffect(() => {
+    setactiveTodos(todos.filter((todo) => todo.completed === false))
+    setcompletedTodos(todos.filter((todo) => todo.completed === true))
+  }, [todos])
   const addTodo = (todo) => {
     setTodos([...todos, { id: Math.floor(Math.random() * 10000), task: todo, completed: false, isEditing: false }])
     setCategory('all')
     toast.success('Todo added!')
   }
-
-  useEffect(() => {
-    sessionStorage.setItem("Data", JSON.stringify(todos));
-  }, [todos])
-
-
-  useEffect(() => {
-    setactiveTodos(todos.filter((todo) => todo.completed === false))
-    setcompletedTodos(todos.filter((todo) => todo.completed === true))
-  }, [todos])
-
-
   const toggleCompleted = (id) => {
     setTodos(todos.map((item) =>
       item.id === id ? { ...item, completed: !item.completed } : item))
@@ -50,8 +44,6 @@ function TodoWrapper() {
     }))
     toast.success('Todo updated!')
   }
-
-  const [category, setCategory] = useState('all')
   const handeClick = (category) => {
     setCategory(category)
     if (category === 'active' && activeTodos.length === 0) toast('No active todos', {
@@ -76,9 +68,7 @@ function TodoWrapper() {
           toggleEdit={toggleEdit} />
     );
     return list;
-
   }
-
   return (
     <div className='todo-wrapper'>
       <TodoForm addTodo={addTodo} />
@@ -93,9 +83,7 @@ function TodoWrapper() {
           renderTodos()
         }
       </div>
-     
     </div>
   )
 }
-
 export default TodoWrapper
