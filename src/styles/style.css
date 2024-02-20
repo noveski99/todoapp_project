@@ -45,6 +45,7 @@ body {
     padding-left: 0.5rem;
     margin: 0 0.3rem;
     font-size: 1.1em;
+    user-select: none;
 }
 
 .category-status::first-letter {
