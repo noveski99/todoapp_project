@@ -5,13 +5,13 @@ import TodoEditForm from './TodoEditForm'
 import '../styles/style.css'
 import toast from 'react-hot-toast';
 function TodoWrapper() {
-  const getSessionStorage = JSON.parse(sessionStorage.getItem('Data')) //get data from session storage
-  const [todos, setTodos] = useState(getSessionStorage ? getSessionStorage : []);//session storage is available then SS, if not []
+  const getLocalStorage = JSON.parse(localStorage.getItem('Data')) //get data from local storage
+  const [todos, setTodos] = useState(getLocalStorage ? getLocalStorage : []);//if local storage has data, if not []
   const [activeTodos, setactiveTodos] = useState([])
   const [completedTodos, setcompletedTodos] = useState([])
   const [category, setCategory] = useState('all')
   useEffect(() => {
-    sessionStorage.setItem("Data", JSON.stringify(todos));
+    localStorage.setItem("Data", JSON.stringify(todos));
   }, [todos])
   useEffect(() => {
     setactiveTodos(todos.filter((todo) => todo.completed === false))
