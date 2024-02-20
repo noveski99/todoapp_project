@@ -11,7 +11,7 @@ function TodoWrapper() {
   const [completedTodos, setcompletedTodos] = useState([])
   const [category, setCategory] = useState('all')
   useEffect(() => {
-    localStorage.setItem("Data", JSON.stringify(todos));
+    localStorage.setItem("Data", JSON.stringify(todos)); //set item in localstorage array
   }, [todos])
   useEffect(() => {
     setactiveTodos(todos.filter((todo) => todo.completed === false))
