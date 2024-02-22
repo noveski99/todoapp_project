@@ -3,7 +3,6 @@ body {
     margin: 0;
     background-color: #e2d7d7;;
 }
-
 .todo-header {
     display: flex;
     flex-direction: column;
@@ -13,29 +12,23 @@ body {
     height: 15vh;
     background-color:  #202020;
 }
-
 .todo-header h1 {
     font-size: 2.2em;
 }
-
 .todo-header h1 a {
     text-decoration: none;
     color: inherit;
 }
-
 .todo-description {
     text-align: center;
     font-size: 0.8em;
     margin: 1rem;
     user-select: none;
 }
-
 .app {
     margin: 0 auto;
     width: 50%;
-    
 }
-
 .todo-wrapper {
     display:flex;
     flex-direction: column;
@@ -44,7 +37,6 @@ body {
     height: 50vh;
  
 }
-
 .category-status{
     border-bottom: 1px solid gray;
     text-align: left;
@@ -54,12 +46,10 @@ body {
     font-size: 1.1em;
     user-select: none;
 }
-
 .category-status::first-letter {
 
     text-transform: capitalize;
 }
-
 .toggle-todos-wrapper {
     display: flex;
     justify-content: right;
@@ -67,23 +57,19 @@ body {
     width: 100%;
     max-width: 100%;
     margin: 0.5rem 0px;
-    justify-content: space-evenly;
-   
+    justify-content: space-between;
 }
 @media only screen and (max-width:733px) and (min-width:480px){
     .app{
         width:80%;
     }
 }
-
 @media only screen and (max-width:480px) {
     .app {
         width: 80%;
     }
 }
-
 .toggle-todos-button {
-     
     align-items: center;
     background-color: #FFFFFF;
     border: none;
@@ -144,35 +130,28 @@ body {
     color: #202020;
 
 }
-
 .todo-options {
     display: flex;
     justify-content: center;
     align-items: center;
     margin-right: 0.5em;
-
 }
-
 .todo-options-item-hidden {
     visibility: hidden;
 }
-
 .todo-options-item {
     cursor: pointer;
     padding: 0.2rem;
 }
-
 .todo-form-wrapper {
     width: 100%;
 }
-
 .todo-form {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
     width: 100%;
 }
-
 .todo-form input {
     flex: 1 0 8rem;
     width: 80%;
@@ -182,7 +161,6 @@ body {
    outline: none;
    border: none;
 }
-
 .todo-form button {
     align-items: center;
     background-color: #FFFFFF;
@@ -209,22 +187,18 @@ body {
     margin: 0.5rem 0.313rem;
     padding: 0.75rem 1.25rem;
 }
-
 .todo-form button:hover {
     border-color: rgba(0, 0, 0, 0.15);
     box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
     color: rgba(0, 0, 0, 0.65);
     scale: 1.1;
 }
-
 .todo-edit-form {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
     width: 100%;
-
 }
-
 .todo-edit-form input {
     flex: 1 0 8rem;
     width: 80%;
@@ -233,7 +207,6 @@ body {
     border-radius: 0.313rem;
     border: 1px solid gray;
 }
-
 .todo-edit-form button {
     align-items: center;
     background-color: #FFFFFF;
@@ -260,14 +233,12 @@ body {
     margin: 0.5rem 0.313rem;
     padding: 0.75rem 1.25rem;
 }
-
 .todo-edit-form button:hover {
     border-color: rgba(0, 0, 0, 0.15);
     box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
     color: rgba(0, 0, 0, 0.65);
     scale: 1.1;
 }
-
 .todo-footer {
     position: fixed;
     left: 0;
