@@ -5,20 +5,20 @@ import TodoEditForm from './TodoEditForm'
 import '../styles/style.css'
 import toast from 'react-hot-toast';
 function TodoWrapper() {
-  const getLocalStorage = JSON.parse(localStorage.getItem('Data')) //get data from local storage
+  const getLocalStorage = JSON.parse(localStorage.getItem('Data')) //get data from local storage as object
   const [todos, setTodos] = useState(getLocalStorage ? getLocalStorage : []);//if local storage has data, if not []
   const [activeTodos, setactiveTodos] = useState([])
   const [completedTodos, setcompletedTodos] = useState([])
   const [category, setCategory] = useState('all')
   useEffect(() => {
-    localStorage.setItem("Data", JSON.stringify(todos)); //set item in localstorage array
+    localStorage.setItem("Data", JSON.stringify(todos)); //set item in localstorage as an array (as string)
   }, [todos])
   useEffect(() => {
     setactiveTodos(todos.filter((todo) => todo.completed === false))
     setcompletedTodos(todos.filter((todo) => todo.completed === true))
   }, [todos])
   const addTodo = (todo) => {
-    setTodos([...todos, { id: Math.floor(Math.random() * 10000), task: todo, completed: false, isEditing: false }])
+    setTodos([...todos, { id: Math.floor(Math.random() * 10000), task: todo, completed: false, isEditing: false }])//spread previous todos,add new
     setCategory('all')
     toast.success('Todo added!')
   }
