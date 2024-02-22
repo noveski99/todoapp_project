@@ -1,7 +1,7 @@
 body {
     font-family: Century Gothic;
     margin: 0;
-    
+    background-color: #e2d7d7;;
 }
 
 .todo-header {
@@ -67,6 +67,7 @@ body {
     width: 100%;
     max-width: 100%;
     margin: 0.5rem 0px;
+    justify-content: space-evenly;
    
 }
 @media only screen and (max-width:733px) and (min-width:480px){
@@ -82,7 +83,7 @@ body {
 }
 
 .toggle-todos-button {
-    flex: 1 0 0.1em;
+     
     align-items: center;
     background-color: #FFFFFF;
     border: none;
@@ -90,9 +91,8 @@ body {
     box-sizing: border-box;
     color: #202020;
     cursor: pointer;
-    display: inline-flex;
     font-family: system-ui, -apple-system, system-ui, "Helvetica Neue", Helvetica, Arial, sans-serif;
-    font-size: 16px;
+    font-size: 1rem;
     font-weight: 600;
     justify-content: center;
     margin-bottom: 1rem;
@@ -105,8 +105,8 @@ body {
     -webkit-user-select: none;
     touch-action: manipulation;
     vertical-align: baseline;
-    width: auto;
-    border-radius: 1em;
+     width:30%;
+    border-radius: 0.313rem;
 }
 .toggle-todos-button:focus {
     background-color: #202020;
@@ -179,7 +179,8 @@ body {
     padding: 0.75rem 1.25rem;
     margin: 0.5rem 0.313rem 0.5rem 0.313rem;
     border-radius: 0.313rem;
-    border: 1px solid gray;
+   outline: none;
+   border: none;
 }
 
 .todo-form button {
