@@ -4,7 +4,9 @@ import Todo from './Todo'
 import TodoEditForm from './TodoEditForm'
 import '../styles/style.css'
 import toast from 'react-hot-toast';
-function TodoWrapper() {
+
+function TodoWrapper(props) {
+  const { date } = props;
   const getLocalStorage = JSON.parse(localStorage.getItem('Data')) //get data from local storage as object
   const [todos, setTodos] = useState(getLocalStorage ? getLocalStorage : []);//if local storage has data, if not []
   const [activeTodos, setactiveTodos] = useState([])
@@ -18,14 +20,14 @@ function TodoWrapper() {
     setcompletedTodos(todos.filter((todo) => todo.completed === true))
   }, [todos])
   const addTodo = (todo) => {
-    setTodos([...todos, { id: Math.floor(Math.random() * 10000), task: todo, completed: false, isEditing: false }])//spread previous todos,add new
+    setTodos([...todos, { id: Math.floor(Math.random() * 10000), task: todo, completed: false, isEditing: false, date: date}])//spread previous todos,add new
     setCategory('all')
+    console.log(todos)
     toast.success('Todo added!')
   }
   const toggleCompleted = (id) => {
     setTodos(todos.map((item) =>
       item.id === id ? { ...item, completed: !item.completed } : item))
-
   }
   const removeTodo = (id) => {
     setTodos(todos.filter(item => item.id !== id))
@@ -47,27 +49,35 @@ function TodoWrapper() {
   const handeClick = (category) => {
     setCategory(category)
     if (category === 'active' && activeTodos.length === 0) toast('No active todos', {
-      position:"bottom-center" 
+      position: "bottom-center"
     });
     if (category === 'completed' && completedTodos.length === 0) toast('No completed todos', {
-      position:"bottom-center" 
+      position: "bottom-center"
     });
     if (category === 'all' && todos.length === 0) toast('Todos list is empty, add some!', {
-      position:"bottom-center" 
+      position: "bottom-center"
     });
   }
   const renderTodos = () => {
     let filteredTodos = todos;
     if (category === "active") filteredTodos = activeTodos;
     else if (category === "completed") filteredTodos = completedTodos;
-    const list = filteredTodos?.map((item, index) =>
-      item.isEditing ? <TodoEditForm item={item} key={index} editTask={editTask} /> :
-        <Todo item={item} key={index}
-          toggleCompleted={toggleCompleted}
-          removeTodo={removeTodo}
-          toggleEdit={toggleEdit} />
+    const list = filteredTodos?.map((item, index) => {
+      if (item.date === date) {
+          return  item.isEditing ? <TodoEditForm item={item} key={index} editTask={editTask} /> :
+          <Todo item={item} key={index}
+            toggleCompleted={toggleCompleted}
+            removeTodo={removeTodo}
+            toggleEdit={toggleEdit} />
+      } else {
+        return null;
+      }
+     
+    }
+
     );
     return list;
+  
   }
   return (
     <div className='todo-wrapper'>
