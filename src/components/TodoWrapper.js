@@ -4,9 +4,15 @@ import Todo from './Todo'
 import TodoEditForm from './TodoEditForm'
 import '../styles/style.css'
 import toast from 'react-hot-toast';
-
-function TodoWrapper(props) {
-  const { date } = props;
+function TodoWrapper() {
+  //date
+  const currentDate = new Date();
+  const year = currentDate.getFullYear();
+  const month = `0${currentDate.getMonth() + 1}`.slice(-2);
+  const day = `0${currentDate.getDate()}`.slice(-2);
+  const formattedDate = `${year}-${month}-${day}`;
+  const [date, setDate] = useState(formattedDate)
+  //-----------------------------------------------------//
   const getLocalStorage = JSON.parse(localStorage.getItem('Data')) //get data from local storage as object
   const [todos, setTodos] = useState(getLocalStorage ? getLocalStorage : []);//if local storage has data, if not []
   const [activeTodos, setactiveTodos] = useState([])
@@ -20,7 +26,7 @@ function TodoWrapper(props) {
     setcompletedTodos(todos.filter((todo) => todo.completed === true))
   }, [todos])
   const addTodo = (todo) => {
-    setTodos([...todos, { id: Math.floor(Math.random() * 10000), task: todo, completed: false, isEditing: false, date: date}])//spread previous todos,add new
+    setTodos([...todos, { id: Math.floor(Math.random() * 10000), task: todo, completed: false, isEditing: false, date: date }])//spread previous todos,add new
     setCategory('all')
     console.log(todos)
     toast.success('Todo added!')
@@ -48,6 +54,8 @@ function TodoWrapper(props) {
   }
   const handeClick = (category) => {
     setCategory(category)
+    console.log(category)
+    //fix this
     if (category === 'active' && activeTodos.length === 0) toast('No active todos', {
       position: "bottom-center"
     });
@@ -64,7 +72,7 @@ function TodoWrapper(props) {
     else if (category === "completed") filteredTodos = completedTodos;
     const list = filteredTodos?.map((item, index) => {
       if (item.date === date) {
-          return  item.isEditing ? <TodoEditForm item={item} key={index} editTask={editTask} /> :
+        return item.isEditing ? <TodoEditForm item={item} key={index} editTask={editTask} /> :
           <Todo item={item} key={index}
             toggleCompleted={toggleCompleted}
             removeTodo={removeTodo}
@@ -72,12 +80,9 @@ function TodoWrapper(props) {
       } else {
         return null;
       }
-     
     }
-
     );
     return list;
-  
   }
   return (
     <div className='todo-wrapper'>
@@ -87,7 +92,10 @@ function TodoWrapper(props) {
         <button title="See active todos" className="toggle-todos-button" onClick={() => handeClick('active')}>Active</button>
         <button title="See completed todos" className="toggle-todos-button" onClick={() => handeClick('completed')}>Completed</button>
       </div>
-      <p className='category-status'>{category}</p>
+      <div className='category-status'>
+        <p>{category}</p>
+        <div className='calendar'><input type='date' onChange={e => setDate(e.target.value)}></input></div>
+      </div>
       <div className='todo-list'>
         {
           renderTodos()

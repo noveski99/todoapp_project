@@ -1,6 +1,5 @@
 import React from 'react'
 import '../styles/style.css'
-
 function Todo(props) {
   const { item, index, toggleCompleted, removeTodo, toggleEdit } = props;
   return (
@@ -10,12 +9,11 @@ function Todo(props) {
         {item.task}
       </p>
       <div className="todo-options">
-        <i title='Edit' className={`${item.completed && 'todo-options-item-hidden'} todo-options-item edit-icon bi bi-pen h5`} onClick={() => { toggleEdit(item.id) }}></i>
+        <i title='Edit' className={`${item.completed && 'todo-options-item-hidden'} todo-options-item edit-icon bi bi-pen h5`} 
+        onClick={() => { toggleEdit(item.id) }}></i>
         <i title='Remove' className="todo-options-item remove-icon bi bi-x-circle h5" onClick={() => removeTodo(item.id)}></i>
       </div>
-
     </div>
   )
 }
-
 export default Todo
