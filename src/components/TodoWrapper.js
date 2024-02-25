@@ -5,22 +5,28 @@ import TodoEditForm from './TodoEditForm'
 import '../styles/style.css'
 import toast from 'react-hot-toast';
 function TodoWrapper() {
-  //date
-  const currentDate = new Date();
+  const currentDate = new Date(); //current date
   const year = currentDate.getFullYear();
   const month = `0${currentDate.getMonth() + 1}`.slice(-2);
   const day = `0${currentDate.getDate()}`.slice(-2);
-  const formattedDate = `${year}-${month}-${day}`;
-  const [date, setDate] = useState(formattedDate)
+  const formattedDate = `${year}-${month}-${day}`; //format current date
+  const [date, setDate] = useState(formattedDate) //set current date
+  const getSelectedDate = localStorage.getItem('selectedDate')//get selected date from LS
+  const [selectedDate, setSelectedDate] = useState(getSelectedDate ? getSelectedDate : date)//set initial date as current date, then selected
+  useEffect(() => {
+    localStorage.setItem('selectedDate', selectedDate)//set selected date to LS
+    setDate(selectedDate)//replace current date with selected date (for todos property)
+  }, [selectedDate])
   //-----------------------------------------------------//
   const getLocalStorage = JSON.parse(localStorage.getItem('Data')) //get data from local storage as object
   const [todos, setTodos] = useState(getLocalStorage ? getLocalStorage : []);//if local storage has data, if not []
   const [activeTodos, setactiveTodos] = useState([])
   const [completedTodos, setcompletedTodos] = useState([])
   const [category, setCategory] = useState('all')
- 
+
   useEffect(() => {
     localStorage.setItem("Data", JSON.stringify(todos)); //set item in localstorage as an array (as string)
+
   }, [todos])
   useEffect(() => {
     setactiveTodos(todos.filter((todo) => todo.completed === false))
@@ -66,6 +72,7 @@ function TodoWrapper() {
     });
   }
   const renderTodos = () => {
+
     let filteredTodos = todos;
     if (category === "active") filteredTodos = activeTodos;
     else if (category === "completed") filteredTodos = completedTodos;
@@ -85,6 +92,8 @@ function TodoWrapper() {
   }
   return (
     <div className='todo-wrapper'>
+
+
       <TodoForm addTodo={addTodo} />
       <div className='toggle-todos-wrapper'>
         <button title="See all todos" className="toggle-todos-button" onClick={() => handeClick('all')}>All</button>
@@ -93,7 +102,10 @@ function TodoWrapper() {
       </div>
       <div className='category-status'>
         <p>{category}</p>
-        <div className='calendar'><input type='date' onChange={e => setDate(e.target.value)}></input></div>
+        <div className='date'>
+          {selectedDate}
+        </div>
+        <div className='calendar'><input type='date' onChange={e => setSelectedDate(e.target.value)}></input></div>
       </div>
       <div className='todo-list'>
         {
