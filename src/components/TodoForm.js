@@ -15,7 +15,7 @@ function TodoForm(props) {
                     maxLength={20}
                     required
                     type='text'
-                    placeholder='Add new'
+                    placeholder='What would you like to do?'
                     name='todo-value'
                     value={value}
                     onChange={(e) => { setValue(e.target.value) }}
