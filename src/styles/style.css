@@ -260,7 +260,6 @@ body {
 
 @media only screen and (min-width:800px) and (max-width:1200px) {
     .app{
-     
         width: 60vw;
         height: 90vh;
     }
@@ -273,22 +272,26 @@ body {
 }
 @media only screen and (max-width:800px) {
     .app{
-        margin:0.5em auto;
-        width: 90vw;
+        border-radius: 0;
+        margin:0;
+        width: 100vw;
         height: 90vh;
-        gap: 12px;
+        border:none;
+   
+    }
+    .todo-header{
+        border-radius: 0;
     }
     .todo-list{
-        width:80%;
+        width:75%;
     }
-    .todo-edit-form button{
-      font-size: 0.7em;
-    }
+ 
     .todo-form button{
-        padding: 0 1.2em;
+        padding: 0 1.5em;
     }
 }
 @media only screen and (max-width:500px) {
+  
     .todo-form-wrapper{
         width: 95%;
     }
@@ -296,7 +299,7 @@ body {
         width: 95%;
     }
     .todo-list{
-        width:95%;
+        width:90%;
     }
     .todo-form button{
         padding: 0 1em;
