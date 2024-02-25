@@ -96,11 +96,11 @@ body {
     padding: 0 1.5em;
     background-color: white;
     cursor: pointer;
-    transition: background-color 500ms ease;
+    transition: scale  100ms ease-in-out;
  
 }
 .todo-form button:hover{
- background-color: #452c63;
+ scale: 1.1;
  
  
 }
