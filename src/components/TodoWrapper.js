@@ -28,7 +28,6 @@ function TodoWrapper() {
   const addTodo = (todo) => {
     setTodos([...todos, { id: Math.floor(Math.random() * 10000), task: todo, completed: false, isEditing: false, date: date }])//spread previous todos,add new
     setCategory('all')
-    console.log(todos)
     toast.success('Todo added!')
   }
   const toggleCompleted = (id) => {
@@ -54,7 +53,6 @@ function TodoWrapper() {
   }
   const handeClick = (category) => {
     setCategory(category)
-    console.log(category)
     //fix this
     if (category === 'active' && activeTodos.length === 0) toast('No active todos', {
       position: "bottom-center"

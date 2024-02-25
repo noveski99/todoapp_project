@@ -48,13 +48,16 @@ body {
 }
 
 .todo-footer {
-    position: fixed;
+    position: absolute;
+    width: 100%;
     left: 0;
     bottom: 0;
-    width: 100%;
-    color: gray;
-    text-align: center;
-    user-select: none;
+    margin:0;
+    padding: 0;
+    display:flex;
+    justify-content: center;
+   font-size: 1rem;
+   color:gray;
 }
 
 .todo-wrapper {
@@ -74,7 +77,7 @@ body {
 
 .todo-form {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-around;
     width: 100%;
 }
 
@@ -89,8 +92,7 @@ body {
 .todo-form button {
     outline: none;
     border: none;
-    padding: 1em;
-    width: 10%;
+    padding: 0 1.5em;
     background-color: white;
     cursor: pointer;
     border-radius: 1em;
@@ -231,11 +233,11 @@ body {
     margin-top: 0.5em;
     width: 100%;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
 }
 
 .todo-edit-form input {
-    width: 80%;
+    width: 75%;
     background-color: white;
     border: none;
     outline: none;
@@ -249,7 +251,7 @@ body {
     border-radius: 1em;
     cursor: pointer;
     font-size: 0.8em;
-    width: 14%
+    padding:0 0.5em;
 }
 
 .todo-options-item-hidden {
@@ -258,14 +260,32 @@ body {
 
 @media only screen and (min-width:800px) and (max-width:1200px) {
     .app{
+     
         width: 60vw;
         height: 90vh;
+    }
+    .todo-edit-form input{
+        width:75%;
+    }
+    .todo-edit-form{
+        justify-content: space-evenly;
     }
 }
 @media only screen and (max-width:800px) {
     .app{
+        margin:0.5em auto;
         width: 90vw;
         height: 90vh;
+        gap: 12px;
+    }
+    .todo-list{
+        width:80%;
+    }
+    .todo-edit-form button{
+      font-size: 0.7em;
+    }
+    .todo-form button{
+        padding: 0 1.2em;
     }
 }
 @media only screen and (max-width:500px) {
@@ -274,5 +294,11 @@ body {
     }
     .toggle-todos-wrapper{
         width: 95%;
+    }
+    .todo-list{
+        width:95%;
+    }
+    .todo-form button{
+        padding: 0 1em;
     }
 }
