@@ -95,7 +95,7 @@ body {
     outline: none;
     color:white;
     background-color: #452c63;
-    padding:0.8em;
+    padding:0.5em 1.3em;
     cursor: pointer;
     border-radius: 10%;
     border:none;
@@ -265,6 +265,7 @@ body {
     cursor: pointer;
     font-size: 0.8em;
     padding:0 0.5em;
+    border-radius:0.6em;
 }
 
 .todo-options-item-hidden {
@@ -313,6 +314,12 @@ body {
  
     .todo-form button{
         padding: 0 1.5em;
+    }
+    .todo-edit-form{
+        justify-content: space-evenly;
+    }
+    .todo-edit-form input{
+        width: 70%;
     }
   
 }

@@ -12,10 +12,10 @@ function TodoWrapper() {
   const formattedDate = `${year}-${month}-${day}`; //format current date
   const [date, setDate] = useState(formattedDate) //set current date
   const getSelectedDate = localStorage.getItem('selectedDate')//get selected date from LS
-  const [selectedDate, setSelectedDate] = useState(getSelectedDate ? getSelectedDate : date)//set initial date as current date, then selected
+  const [selectedDate, setSelectedDate] = useState(getSelectedDate ? getSelectedDate : date)//set initial date as current date, then change to selected
   useEffect(() => {
     localStorage.setItem('selectedDate', selectedDate)//set selected date to LS
-    setDate(selectedDate)//replace current date with selected date (for todos property)
+    setDate(selectedDate)//replace current date with selected date (for todos)
   }, [selectedDate])
   //-----------------------------------------------------//
   const getLocalStorage = JSON.parse(localStorage.getItem('Data')) //get data from local storage as object
