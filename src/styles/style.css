@@ -53,12 +53,12 @@ body {
     width: 100%;
     left: 0;
     bottom: 0;
-    margin:0;
+    margin: 0;
     padding: 0;
-    display:flex;
+    display: flex;
     justify-content: center;
-   font-size: 1rem;
-   color:gray;
+    font-size: 1rem;
+    color: gray;
 }
 
 .todo-wrapper {
@@ -93,16 +93,16 @@ body {
 
 .todo-form button {
     outline: none;
-    color:white;
+    color: white;
     background-color: #452c63;
-    padding:0.5em 1.3em;
+    padding: 0.5em 1.3em;
     cursor: pointer;
     border-radius: 10%;
-    border:none;
+    border: none;
     font-size: 1em;
- 
+
 }
- 
+
 
 .toggle-form button:hover {
     color: #452c63;
@@ -148,15 +148,18 @@ body {
     margin: 0.5em 0;
     padding: 0;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-around;
     width: 100%;
     position: relative;
-    background-color: 		#D0D0D0;
- transition: box-shadow 100ms ease;
+    background-color: #D0D0D0;
+    transition: box-shadow 100ms ease;
+
 }
-.todo:hover{
+
+.todo:hover {
     box-shadow: 0px 3px 10px 2px rgba(0, 0, 0, 0.3);
 }
+
 .todo:nth-child(2n+1)::before {
     content: '';
     background-color: #452c63;
@@ -179,12 +182,12 @@ body {
 
 
 .todo p {
-    width: 90%;
-    margin: 1em;
+    width: 80%;
+
     cursor: pointer;
     text-transform: capitalize;
-    color:black;
-    
+    color: black;
+
 }
 
 .todo-options {
@@ -198,7 +201,7 @@ body {
     justify-content: space-between;
     border-bottom: 1px solid gray;
     width: 80%;
-   
+
 }
 
 .category-status p {
@@ -207,7 +210,7 @@ body {
     margin: 0;
     padding: 1em;
     text-transform: capitalize;
- 
+
 }
 
 .calendar {
@@ -215,7 +218,7 @@ body {
     justify-content: flex-end;
     align-items: center;
     width: 30%;
-   
+
 }
 
 .calendar input {
@@ -256,7 +259,7 @@ body {
     border-bottom: 1px solid #452c63;
     outline: none;
     padding: 1em;
- 
+
 }
 
 .todo-edit-form button {
@@ -264,84 +267,97 @@ body {
     border: 1px solid gray;
     cursor: pointer;
     font-size: 0.8em;
-    padding:0 0.5em;
-    border-radius:0.6em;
+    padding: 0 0.5em;
+    border-radius: 0.6em;
 }
 
 .todo-options-item-hidden {
     visibility: hidden;
 }
-.date{
+
+.date {
     font-size: 1.3em;
-    padding:0;
-    color:gray;
+    padding: 0;
+    color: gray;
     width: 40%;
     text-align: center;
     user-select: none;
-    margin:0;
-    display:flex;
+    margin: 0;
+    display: flex;
     justify-content: center;
     align-items: center;
 }
 
 @media only screen and (min-width:800px) and (max-width:1200px) {
-    .app{
+    .app {
         width: 60vw;
         height: 90vh;
     }
-    .todo-edit-form input{
-        width:75%;
+
+    .todo-edit-form input {
+        width: 75%;
     }
-    .todo-edit-form{
+
+    .todo-edit-form {
         justify-content: space-evenly;
-    }
-}
-@media only screen and (max-width:800px) {
-    .app{
-        border-radius: 0;
-        margin:0;
-        width: 100vw;
-        height: 90vh;
-        border:none;
-   
-    }
-    .todo-header{
-        border-radius: 0;
-    }
-    .todo-list{
-        width:75%;
-    }
- 
-    .todo-form button{
-        padding: 0 1.5em;
-    }
-    .todo-edit-form{
-        justify-content: space-evenly;
-    }
-    .todo-edit-form input{
-        width: 70%;
-    }
-  
-}
-@media only screen and (max-width:500px) {
-  
-    .todo-form-wrapper{
-        width: 95%;
-    }
-    .toggle-todos-wrapper{
-        width: 95%;
-    }
-    .todo-list{
-        width:90%;
-    }
-    .todo-form button{
-        padding: 0 1em;
-    }
-    .category-status{
-        width: 92%;
-    }
-    .date{
-        justify-content: flex-start;
     }
 }
 
+@media only screen and (max-width:800px) {
+    .app {
+        border-radius: 0;
+        margin: 0;
+        width: 100vw;
+        height: 90vh;
+        border: none;
+
+    }
+
+    .todo-header {
+        border-radius: 0;
+    }
+
+    .todo-list {
+        width: 75%;
+    }
+
+    .todo-form button {
+        padding: 0 1.5em;
+    }
+
+    .todo-edit-form {
+        justify-content: space-evenly;
+    }
+
+    .todo-edit-form input {
+        width: 70%;
+    }
+
+}
+
+@media only screen and (max-width:500px) {
+
+    .todo-form-wrapper {
+        width: 95%;
+    }
+
+    .toggle-todos-wrapper {
+        width: 95%;
+    }
+
+    .todo-list {
+        width: 90%;
+    }
+
+    .todo-form button {
+        padding: 0 1em;
+    }
+
+    .category-status {
+        width: 92%;
+    }
+
+    .date {
+        justify-content: flex-start;
+    }
+}
