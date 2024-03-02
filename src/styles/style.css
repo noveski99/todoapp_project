@@ -367,7 +367,9 @@ body {
     .category-status {
         width: 92%;
     }
-
+    .category-status p {
+        margin-right: 1.5rem;
+    }
     .date {
         justify-content: flex-start;
     }
