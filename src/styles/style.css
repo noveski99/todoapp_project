@@ -22,7 +22,7 @@ body {
 
 .todo-header {
     width: 100%;
-    background-color: #452c63;
+    background-color: #4e6190;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -96,7 +96,7 @@ body {
 .todo-form button {
     outline: none;
     color: white;
-    background-color: #452c63;
+    background-color: #4e6190;
     padding: 0.5em 1.3em;
     cursor: pointer;
     border-radius: 10%;
@@ -133,7 +133,7 @@ body {
 }
 
 .toggle-todos-wrapper button:hover {
-    color: #452c63;
+   color: #4e6190;
 }
 
 .toggle-todos-wrapper button:focus {
@@ -176,7 +176,7 @@ body {
 
 .todo:nth-child(2n)::before {
     content: '';
-    background-color: #0066b2;
+    background-color: #4e6190;
     position: absolute;
     height: 60%;
     width: 2px;
