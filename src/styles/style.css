@@ -11,12 +11,12 @@ body {
     margin-top: 2rem;
     width: 40vw;
     height: 80vh;
-    border: 2px solid #452c63;
+    border: 1px solid rgba(26, 27, 31, 0.3);
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     position: relative;
-    border-radius: 1em;
+    border-radius:5px;
     box-shadow: 2px 2px 5px 5px rgba(0, 0, 0, 0.3);
 }
 
@@ -28,10 +28,8 @@ body {
     justify-content: center;
     align-items: center;
     height: 20%;
-
-    border-top-left-radius: 1em;
-
-    border-top-right-radius: 1em;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
 }
 
 .todo-header h1 {
@@ -41,6 +39,8 @@ body {
     width: 100%;
     color: white;
     font-size: 3em;
+    font-family: Montserrat;
+    font-style: italic;
 }
 
 .todo-header h1 a {
@@ -87,8 +87,10 @@ body {
     border: none;
     padding: 0.5em;
     width: 80%;
-    border-bottom: 1px solid gray;
+    border-bottom: 1px solid rgba(26, 27, 31, 0.3);
     background-color: inherit;
+    font-family: Montserrat;
+    font-size: 1.1rem;
 }
 
 .todo-form button {
@@ -120,12 +122,14 @@ body {
     width: 30%;
     padding: 0.5em;
     background-color: white;
+    color: #1a1b1f;
     margin: 0;
     outline: none;
-    border: 1px solid gray;
+    border: 1px solid rgba(26, 27, 31, 0.3);
     cursor: pointer;
     border-radius: 1em;
     transition: color 500ms ease;
+     font-family: Montserrat;
 }
 
 .toggle-todos-wrapper button:hover {
@@ -183,7 +187,7 @@ body {
 
 .todo p {
     width: 80%;
-
+    font-family: Montserrat;
     cursor: pointer;
     text-transform: capitalize;
     color: black;
@@ -199,7 +203,7 @@ body {
 .category-status {
     display: flex;
     justify-content: space-between;
-    border-bottom: 1px solid gray;
+    border-bottom: 1px solid rgba(26, 27, 31, 0.3);
     width: 80%;
 
 }
@@ -210,7 +214,8 @@ body {
     margin: 0;
     padding: 1em;
     text-transform: capitalize;
-
+    font-family: Montserrat;
+ 
 }
 
 .calendar {
@@ -222,8 +227,10 @@ body {
 }
 
 .calendar input {
-
-    border: none;
+    text-align: center;
+    padding:2px;
+    font-family: Inter;
+    border: 1px solid rgba(26, 27, 31, 0.3);
 }
 
 ::-webkit-scrollbar {
@@ -256,19 +263,22 @@ body {
     border: none;
     width: 75%;
     background-color: inherit;
-    border-bottom: 1px solid #452c63;
+    border-bottom: 1px solid rgba(26, 27, 31, 0.3);
     outline: none;
     padding: 1em;
-
+    font-family: Montserrat;
+    font-size: 0.8rem;
 }
 
 .todo-edit-form button {
     outline: none;
-    border: 1px solid gray;
+    border: 1px solid rgba(26, 27, 31, 0.3);
     cursor: pointer;
     font-size: 0.8em;
     padding: 0 0.5em;
     border-radius: 0.6em;
+    font-family: Montserrat;
+    color:#1a1b1f;
 }
 
 .todo-options-item-hidden {
@@ -276,9 +286,10 @@ body {
 }
 
 .date {
-    font-size: 1.3em;
+    font-size: 1.2rem;
     padding: 0;
-    color: gray;
+    color: #1a1b1f;
+    opacity: 0.6;
     width: 40%;
     text-align: center;
     user-select: none;
