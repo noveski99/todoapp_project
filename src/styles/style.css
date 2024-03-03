@@ -287,7 +287,7 @@ body {
 }
 
 .date {
-    font-size: 1.2rem;
+    font-size: 1rem;
     padding: 0;
     color: #1a1b1f;
     opacity: 0.6;
@@ -350,6 +350,10 @@ body {
 @media only screen and (max-width:500px) {
     .app{
         height: 100vh;
+        justify-content: flex-start;
+    }
+    .todo-wrapper{
+        margin-top: 1rem;
     }
     .todo-item-padding {
         padding-right: 0.6em;
@@ -370,7 +374,9 @@ body {
     .todo-form button {
         padding: 0 1em;
     }
-
+    .todo-form input {
+        font-size: 1rem;
+    }
     .category-status {
         width: 92%;
     }
