@@ -18,7 +18,7 @@ body {
     justify-content: space-between;
     position: relative;
     border-radius:5px;
-    box-shadow: 2px 2px 5px 5px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.1);
 }
 
 .todo-header {
@@ -173,7 +173,7 @@ body {
     height: 70%;
     width: 2px;
     bottom: 15%;
-    left: 0;
+    left: -1px;
 }
 
 .todo:nth-child(2n)::before {
@@ -183,7 +183,7 @@ body {
     height: 70%;
     width: 2px;
     bottom: 15%;
-    left: 0;
+    left: -1px;
 }
 
 
