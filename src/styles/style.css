@@ -1,13 +1,14 @@
 body {
     font-family: Century Gothic;
     margin: 0;
-    background-color: #e2d7d7;
+    background-color: #fff;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
 .app {
+    background-color: #fafafa;
     margin-top: 2rem;
     width: 40vw;
     height: 80vh;
@@ -155,7 +156,7 @@ body {
     justify-content: space-around;
     width: 100%;
     position: relative;
-    background-color: #D0D0D0;
+    background-color: #E1EBEE;
     transition: box-shadow 100ms ease;
 
 }
@@ -319,7 +320,7 @@ body {
         border-radius: 0;
         margin: 0;
         width: 100vw;
-        height: 90vh;
+        height: 100vh;
         border: none;
 
     }
@@ -347,6 +348,9 @@ body {
 }
 
 @media only screen and (max-width:500px) {
+    .app{
+        height: 100vh;
+    }
 
     .todo-form-wrapper {
         width: 95%;
