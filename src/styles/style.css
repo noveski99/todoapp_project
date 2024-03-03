@@ -351,7 +351,10 @@ body {
     .app{
         height: 100vh;
     }
-
+    .todo-item-padding {
+        padding-right: 0.6em;
+        padding-left: 0.3em;
+    }
     .todo-form-wrapper {
         width: 95%;
     }
@@ -361,7 +364,7 @@ body {
     }
 
     .todo-list {
-        width: 90%;
+        width: 93%;
     }
 
     .todo-form button {
