@@ -90,8 +90,9 @@ body {
     width: 80%;
     border-bottom: 1px solid rgba(26, 27, 31, 0.1);
     background-color: inherit;
-    font-family: Montserrat;
-    font-size: 1.1rem;
+    font-family: 'Neue Haas Grotesk Display Pro', sans-serif;
+    font-size: 1rem;
+   
 }
 
 .todo-form button {
@@ -188,9 +189,12 @@ body {
 
 .todo p {
     width: 80%;
-    font-family: Montserrat;
+    font-family: 'Neue Haas Grotesk Display Pro', sans-serif;
     cursor: pointer;
     text-transform: capitalize;
+  
+    font-size: 1rem;
+    
 }
 
 .todo-options {
